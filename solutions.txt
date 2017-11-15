@@ -1,0 +1,101 @@
+Website 1
+
+Open ctf.uwaterloo.ca:8081 and find the flag in the HTML source
+
+Website 2
+
+Open the toggle.css file and find the flag in the css code
+
+Cipher - keeping it classic
+
+This is a subsitution cipher. Use ciphertext analysis. This site was used to help to speed up the process: https://www.guballa.de/substitution-solver.
+
+Walk the Line
+line 23- gets(long_cat_name);
+gets is insecure since it reads directly from stdin and is subject to overflow attacks
+
+Get in Your Head
+this is brainfuck language- run using https://copy.sh/brainfuck/
+
+Early bird gets the (140 character) worm
+line 15- snprintf is insecure and subject to overflow
+
+Always Watching
+Availability - Part of the CIA triad: Confidentiality Integrity Availability
+
+Techno-optimist
+This is a quote from the movie Eddie Izzard: Glorious. Simply search for the transcript online.
+
+Popular Hacker Movie Quotes
+Hack the planet.
+
+Demogorgon
+https://www.youtube.com/watch?v=2bRAvxSSzEU
+Answer at 1:21
+
+Endless loop
+Using objdump, a call to the function hack_da_flag is made. Inside the function, these lines
+  400640:	c7 45 80 46 00 00 00 	movl   $0x46,-0x80(%rbp)
+  400647:	c7 45 84 4c 00 00 00 	movl   $0x4c,-0x7c(%rbp)
+  40064e:	c7 45 88 41 00 00 00 	movl   $0x41,-0x78(%rbp)
+  400655:	c7 45 8c 47 00 00 00 	movl   $0x47,-0x74(%rbp)
+  40065c:	c7 45 90 7b 00 00 00 	movl   $0x7b,-0x70(%rbp)
+  400663:	c7 45 94 59 00 00 00 	movl   $0x59,-0x6c(%rbp)
+  40066a:	c7 45 98 30 00 00 00 	movl   $0x30,-0x68(%rbp)
+  400671:	c7 45 9c 55 00 00 00 	movl   $0x55,-0x64(%rbp)
+  400678:	c7 45 a0 5f 00 00 00 	movl   $0x5f,-0x60(%rbp)
+  40067f:	c7 45 a4 43 00 00 00 	movl   $0x43,-0x5c(%rbp)
+  400686:	c7 45 a8 40 00 00 00 	movl   $0x40,-0x58(%rbp)
+  40068d:	c7 45 ac 4e 00 00 00 	movl   $0x4e,-0x54(%rbp)
+  400694:	c7 45 b0 5f 00 00 00 	movl   $0x5f,-0x50(%rbp)
+  40069b:	c7 45 b4 4a 00 00 00 	movl   $0x4a,-0x4c(%rbp)
+  4006a2:	c7 45 b8 55 00 00 00 	movl   $0x55,-0x48(%rbp)
+  4006a9:	c7 45 bc 4d 00 00 00 	movl   $0x4d,-0x44(%rbp)
+  4006b0:	c7 45 c0 50 00 00 00 	movl   $0x50,-0x40(%rbp)
+  4006b7:	c7 45 c4 5f 00 00 00 	movl   $0x5f,-0x3c(%rbp)
+  4006be:	c7 45 c8 44 00 00 00 	movl   $0x44,-0x38(%rbp)
+  4006c5:	c7 45 cc 41 00 00 00 	movl   $0x41,-0x34(%rbp)
+  4006cc:	c7 45 d0 5f 00 00 00 	movl   $0x5f,-0x30(%rbp)
+  4006d3:	c7 45 d4 48 00 00 00 	movl   $0x48,-0x2c(%rbp)
+  4006da:	c7 45 d8 4f 00 00 00 	movl   $0x4f,-0x28(%rbp)
+  4006e1:	c7 45 dc 4f 00 00 00 	movl   $0x4f,-0x24(%rbp)
+  4006e8:	c7 45 e0 50 00 00 00 	movl   $0x50,-0x20(%rbp)
+  4006ef:	c7 45 e4 53 00 00 00 	movl   $0x53,-0x1c(%rbp)
+  4006f6:	c7 45 e8 7d 00 00 00 	movl   $0x7d,-0x18(%rbp)
+
+The sources value in movl corresponds to the flag.
+FLAG{Y0U_C@N_JUMP_DA_HOOPS}
+
+Silent Leaker
+
+Using objdump, the flag is inside main function:
+  40065d:	c7 45 90 46 00 00 00 	movl   $0x46,-0x70(%rbp) F
+  400664:	c7 45 94 4c 00 00 00 	movl   $0x4c,-0x6c(%rbp) L
+  40066b:	c7 45 98 41 00 00 00 	movl   $0x41,-0x68(%rbp) A
+  400672:	c7 45 9c 47 00 00 00 	movl   $0x47,-0x64(%rbp) G
+  400679:	c7 45 a0 7b 00 00 00 	movl   $0x7b,-0x60(%rbp) {
+  400680:	c7 45 a4 74 00 00 00 	movl   $0x74,-0x5c(%rbp) t
+  400687:	c7 45 a8 21 00 00 00 	movl   $0x21,-0x58(%rbp) !
+  40068e:	c7 45 ac 6d 00 00 00 	movl   $0x6d,-0x54(%rbp) m
+  400695:	c7 45 b0 33 00 00 00 	movl   $0x33,-0x50(%rbp) 3
+  40069c:	c7 45 b4 5f 00 00 00 	movl   $0x5f,-0x4c(%rbp) _
+  4006a3:	c7 45 b8 21 00 00 00 	movl   $0x21,-0x48(%rbp) !
+  4006aa:	c7 45 bc 35 00 00 00 	movl   $0x35,-0x44(%rbp) 5
+  4006b1:	c7 45 c0 5f 00 00 00 	movl   $0x5f,-0x40(%rbp) _
+  4006b8:	c7 45 c4 66 00 00 00 	movl   $0x66,-0x3c(%rbp) f
+  4006bf:	c7 45 c8 75 00 00 00 	movl   $0x75,-0x38(%rbp) u
+  4006c6:	c7 45 cc 6e 00 00 00 	movl   $0x6e,-0x34(%rbp) n
+  4006cd:	c7 45 d0 64 00 00 00 	movl   $0x64,-0x30(%rbp) d
+  4006d4:	c7 45 d4 34 00 00 00 	movl   $0x34,-0x2c(%rbp) 4
+  4006db:	c7 45 d8 6d 00 00 00 	movl   $0x6d,-0x28(%rbp) m
+  4006e2:	c7 45 dc 33 00 00 00 	movl   $0x33,-0x24(%rbp) 3
+  4006e9:	c7 45 e0 6e 00 00 00 	movl   $0x6e,-0x20(%rbp) n
+  4006f0:	c7 45 e4 74 00 00 00 	movl   $0x74,-0x1c(%rbp) t
+  4006f7:	c7 45 e8 40 00 00 00 	movl   $0x40,-0x18(%rbp) @
+  4006fe:	c7 45 ec 6c 00 00 00 	movl   $0x6c,-0x14(%rbp) l
+  400705:	c7 45 f0 7d 00 00 00 	movl   $0x7d,-0x10(%rbp) }
+
+It is the source values of movl.
+
+Read, read, read
+use strings command to find the flag
